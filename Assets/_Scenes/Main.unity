@@ -228,7 +228,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048467614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.5, y: 9.5, z: 0}
+  m_LocalPosition: {x: -7, y: 7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -246,14 +246,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6185285157f3d3f4f813f419ba2cbf28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rows: 20
-  Cols: 36
+  Rows: 15
+  Cols: 15
   TilePrefab: {fileID: 1071294905292167477, guid: a90baa0e399bfa644b5044ab31ca835e,
     type: 3}
   TileColor_Default: {r: 0.86, g: 0.83, b: 0.83, a: 1}
   TileColor_Expensive: {r: 0.19, g: 0.65, b: 0.43, a: 1}
   TileColor_Infinity: {r: 0.1254902, g: 0.1254902, b: 0.1254902, a: 1}
-  TileColor_Start: {r: 0, g: 1, b: 0, a: 1}
+  TileColor_Start: {r: 0, g: 0.88235295, b: 0, a: 1}
   TileColor_End: {r: 1, g: 0, b: 0, a: 1}
   TileColor_Path: {r: 0.73, g: 0, b: 1, a: 1}
   TileColor_Visited: {r: 0.75, g: 0.55, b: 0.38, a: 1}

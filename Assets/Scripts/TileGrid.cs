@@ -8,7 +8,7 @@ namespace PathFinding
     public class TileGrid : MonoBehaviour
     {
         private const int TileWeight_Default = 1;
-        private const int TileWeight_Expensive = 15;
+        private const int TileWeight_Expensive = 50;
         private const int TileWeight_Infinity = int.MaxValue;
 
         public int Rows;
@@ -43,15 +43,16 @@ namespace PathFinding
                 }
             }
 
-            CreateExpensiveArea(5, 10, 15, 3, TileWeight_Expensive);
-            CreateExpensiveArea(5, 24, 3, 15, TileWeight_Expensive);
+
+            CreateExpensiveArea(3, 3, 9, 1, TileWeight_Expensive);
+            CreateExpensiveArea(3, 11, 1, 9, TileWeight_Expensive);
             ResetGrid();
         }
 
         private void Update()
         {
-            Tile start = GetTile(15, 10);
-            Tile end = GetTile(10, Cols - 6);
+            Tile start = GetTile(9, 2);
+            Tile end = GetTile(7, 14);
 
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
@@ -70,6 +71,19 @@ namespace PathFinding
                 StopPathCoroutine();
                 _pathRoutine = FindPath(start, end, PathFinder.FindPath_AStar);
                 StartCoroutine(_pathRoutine);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                StopPathCoroutine();
+                _pathRoutine = FindPath(start, end, PathFinder.FindPath_GreedyBestFirstSearch);
+                StartCoroutine(_pathRoutine);
+            }
+            else if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                StopPathCoroutine();
+                ResetGrid();
+                start.SetColor(TileColor_Start);
+                end.SetColor(TileColor_End);
             }
         }
 
